@@ -1,20 +1,22 @@
 let productContainer = document.querySelector(".productContainer");
-let productId = 2358;
+const productId = new URLSearchParams(window.location.search).get("id");
+console.log("sidenVises");
 
 fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((response) => response.json())
   .then((data) => {
+    console.log(data);
     productContainer.innerHTML = `
       <section class="breadcrumbs">
         <div class="info">
-          <!-- <h1>ADIDAS Red sports cap</h1> -->
-          <p>adidas CR ESS CORP CAP</p>
+          <h1>"${data.productdisplayname}"</h1>x
+          <p>"${data.brandname}"</p>
           <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="cap_2358">
         </div>
 
         <div class="purchase_box">
           <form>
-            <label for="size">Choose a size:</label>
+            <label for="size">${data.size}</label>
             <select id="size" name="size">
               <option value="one-size">One Size</option>
             </select>
@@ -30,5 +32,9 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
           <p><strong>${data.description}</strong></p>
         </div>
       </section>
+      <span class="sale ${data.discount && "sale_on_img_product"}">Sale : ${data.discount} % </span>
+
+      <span class="sold_out ${data.soldout && "sold_out_on_img_product"}">Sold out</span>
+      
     `; // <-- Sørg for at denne backtick (``) er her
   });

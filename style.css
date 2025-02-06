@@ -218,34 +218,13 @@ p {
   text-decoration: none; /* Fjern standard-link-styling */
 }
 
-.card {
-  grid-column: 1;
-  border: 1px solid black;
-}
-.navy_cap {
-  grid-column: 2;
-  border: 1px solid black;
-}
-.white_cap {
-  grid-column: 3;
-  border: 1px solid black;
-}
-.black_cap {
-  grid-column: 4;
-  border: 1px solid black;
-}
-
 .accesories_list_container img {
   max-width: 100%; /* Sørger for, at billederne fylder deres container */
   height: auto; /* Bevarer billedets proportioner */
   object-fit: cover; /* Sikrer, at billederne fylder deres bokse pænt */
 }
 
-.rød_cap,
-.navy_cap,
-.white_cap,
-.black_cap {
-  grid-column: auto;
+.card {
   border: 1px solid black;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* X-offset, Y-offset, Blur, Farve */
   padding: 20px; /* Giver lidt plads omkring indholdet */
@@ -253,10 +232,7 @@ p {
   transition: all 0.3s ease-in-out;
 }
 
-.rød_cap:hover,
-.navy_cap:hover,
-.white_cap:hover,
-.black_cap:hover {
+.card {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Stærkere skygge */
   transform: translateY(-5px); /* Løfter boksen lidt op */
 }

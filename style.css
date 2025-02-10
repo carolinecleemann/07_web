@@ -16,13 +16,13 @@ header {
   display: flex;
   text-align: center;
   list-style: none;
-  color: black;
+  color: white;
   gap: 10px;
   margin-top: 20px;
 }
 
 .menu li {
-  background-color: transparent;
+  background-color: black;
   gap: 5px;
 }
 
@@ -196,6 +196,7 @@ p {
   justify-self: center;
   color: red;
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 .learn a {
@@ -210,29 +211,12 @@ p {
   grid-template-columns: 1fr;
   margin: 45px;
   margin-bottom: 50px;
-  gap: 70px;
+  gap: 50px;
 }
 
 .accesories_list_container a {
-  display: inline-block;
+  display: block;
   text-decoration: none; /* Fjern standard-link-styling */
-}
-
-.card {
-  grid-column: 1;
-  border: 1px solid black;
-}
-.navy_cap {
-  grid-column: 2;
-  border: 1px solid black;
-}
-.white_cap {
-  grid-column: 3;
-  border: 1px solid black;
-}
-.black_cap {
-  grid-column: 4;
-  border: 1px solid black;
 }
 
 .accesories_list_container img {
@@ -241,22 +225,16 @@ p {
   object-fit: cover; /* Sikrer, at billederne fylder deres bokse pænt */
 }
 
-.rød_cap,
-.navy_cap,
-.white_cap,
-.black_cap {
-  grid-column: auto;
+.card {
   border: 1px solid black;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* X-offset, Y-offset, Blur, Farve */
-  padding: 20px; /* Giver lidt plads omkring indholdet */
+  padding: 40px; /* Giver lidt plads omkring indholdet */
   background: white;
   transition: all 0.3s ease-in-out;
+  line-height: 1.5rem;
 }
 
-.rød_cap:hover,
-.navy_cap:hover,
-.white_cap:hover,
-.black_cap:hover {
+.card {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); /* Stærkere skygge */
   transform: translateY(-5px); /* Løfter boksen lidt op */
 }
@@ -408,9 +386,6 @@ select {
     display: flex;
     flex-direction: column;
     place-self: center;
-    /* justify-content: center; 
-        align-items: center; 
-        text-align: center; */
     margin-top: 350px;
     max-width: 400px;
     font-size: 1.2rem;
@@ -420,9 +395,12 @@ select {
 
 .sale {
   position: absolute;
-  top: 0;
-  left: 0;
+  text-align: center;
+  padding: 10px;
   color: red;
+  font-weight: bold;
+  bottom: 0%;
+  right: 28%;
 }
 
 .hide {
@@ -440,13 +418,26 @@ select {
 }
 
 .sold_out {
-  opacity: 0.5;
   position: absolute;
-  top: 0;
-  right: 0;
+  opacity: 0.5;
+  text-align: center;
+  font-weight: bold;
+  font-size: 45px;
+  top: 2%;
+  right: 10%;
 }
 
 .sold_out_on_img_product {
   position: absolute;
   visibility: visible;
+}
+
+.sold_out_2 {
+  position: absolute;
+  top: 48%;
+  right: 27%;
+  opacity: 0.5;
+  text-align: center;
+  font-weight: bold;
+  font-size: 35px;
 }

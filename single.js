@@ -30,11 +30,12 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
           <p><strong>${data.productdisplayname}</strong><br><br>${data.basecolour}</p>
           <p>${data.price} kr.</p>
           <p><strong>${data.description}</strong></p>
+          <span class="sold_out_2"${data.soldout && "sold_out_on_img_product"}">SOLD OUT</span>
+          
         </div>
       </section>
-      <span class="sale ${data.discount && "sale_on_img_product"}">Sale : ${data.discount} % </span>
+      <span class="sale_02 ${data.discount && "sale_on_img_product"}">Sale : ${data.discount} % </span>
 
-      <span class="sold_out ${data.soldout && "sold_out_on_img_product"}">Sold out</span>
       
     `; // <-- Sørg for at denne backtick (``) er her
   });
